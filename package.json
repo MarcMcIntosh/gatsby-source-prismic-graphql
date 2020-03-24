@@ -62,7 +62,8 @@
     "@types/traverse": "^0.6.32",
     "cross-env": "^5.2.0",
     "gatsby": "^2.13.37",
-    "prettier": "^1.16.4"
+    "prettier": "^1.16.4",
+    "typescript": "^3.8.3"
   },
   "keywords": [
     "gatsby",
