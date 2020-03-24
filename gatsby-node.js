@@ -168,29 +168,23 @@ var getDocumentsQuery = function getDocumentsQuery(_ref4) {
   return "\n  query AllPagesQuery ($after: String, $lang: String, $sortBy: ".concat(sortType, ") {\n    prismic {\n      ").concat(documentType, " (\n        first: 20\n        after: $after\n        sortBy: $sortBy\n        lang: $lang\n      ) {\n        totalCount\n        pageInfo {\n          hasNextPage\n          endCursor\n        }\n        edges {\n          cursor\n          node {\n            ").concat(extraPageFields, "\n            _meta {\n              id\n              lang\n              uid\n              type\n              alternateLanguages {\n                id\n                lang\n                type\n                uid\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n");
 };
 
-exports.createPages =
-/*#__PURE__*/
-function () {
-  var _ref6 = (0, _asyncToGenerator2.default)(
-  /*#__PURE__*/
-  _regenerator.default.mark(function _callee2(_ref5, options) {
+exports.createPages = /*#__PURE__*/function () {
+  var _ref6 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2(_ref5, options) {
     var graphql, createPage, createPagesForType, _createPagesForType, pages, pageCreators;
 
     return _regenerator.default.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
-            _createPagesForType = function _ref9() {
-              _createPagesForType = (0, _asyncToGenerator2.default)(
-              /*#__PURE__*/
-              _regenerator.default.mark(function _callee(page, lang) {
+            _createPagesForType = function _createPagesForType3() {
+              _createPagesForType = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(page, lang) {
                 var endCursor,
                     documents,
                     documentType,
                     sortType,
                     extraPageFields,
                     query,
-                    _ref7,
+                    _yield$graphql,
                     data,
                     errors,
                     response,
@@ -221,9 +215,9 @@ function () {
                         });
 
                       case 8:
-                        _ref7 = _context.sent;
-                        data = _ref7.data;
-                        errors = _ref7.errors;
+                        _yield$graphql = _context.sent;
+                        data = _yield$graphql.data;
+                        errors = _yield$graphql.errors;
 
                         if (!(errors && errors.length)) {
                           _context.next = 13;
@@ -269,7 +263,7 @@ function () {
               return _createPagesForType.apply(this, arguments);
             };
 
-            createPagesForType = function _ref8(_x3, _x4) {
+            createPagesForType = function _createPagesForType2(_x3, _x4) {
               return _createPagesForType.apply(this, arguments);
             };
 
@@ -313,15 +307,15 @@ function () {
   };
 }();
 
-exports.createResolvers = function (_ref10, _ref11) {
-  var actions = _ref10.actions,
-      cache = _ref10.cache,
-      createNodeId = _ref10.createNodeId,
-      createResolvers = _ref10.createResolvers,
-      store = _ref10.store,
-      reporter = _ref10.reporter;
-  var _ref11$sharpKeys = _ref11.sharpKeys,
-      sharpKeys = _ref11$sharpKeys === void 0 ? [/image|photo|picture/] : _ref11$sharpKeys;
+exports.createResolvers = function (_ref7, _ref8) {
+  var actions = _ref7.actions,
+      cache = _ref7.cache,
+      createNodeId = _ref7.createNodeId,
+      createResolvers = _ref7.createResolvers,
+      store = _ref7.store,
+      reporter = _ref7.reporter;
+  var _ref8$sharpKeys = _ref8.sharpKeys,
+      sharpKeys = _ref8$sharpKeys === void 0 ? [/image|photo|picture/] : _ref8$sharpKeys;
   var createNode = actions.createNode;
   var state = store.getState();
 

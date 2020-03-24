@@ -18,5 +18,5 @@ export declare function fetchStripQueryWhitespace(url: string, ...args: any): Pr
  * Apollo Link for Prismic
  * @param options Options
  */
-export declare function PrismicLink({ uri, accessToken, customRef, ...rest }: IPrismicLinkArgs): import("apollo-boost").ApolloLink;
+export declare function PrismicLink({ uri, accessToken, customRef, ...rest }: IPrismicLinkArgs): import("apollo-link").ApolloLink;
 export {};
